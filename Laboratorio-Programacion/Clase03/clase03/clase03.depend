@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1490812880 source:c:\users\marina\utn\programacion-laboratorioclases\laboratorio-programacion\clase03\clase03\mibiblioteca.c
+	<stdio.h>
+	<stdlib.h>
+
+1490813085 source:c:\users\marina\utn\programacion-laboratorioclases\laboratorio-programacion\clase03\clase03\main.c
+	<stdio.h>
+	<stdlib.h>
+	"miBiblioteca.h"
+
+1490812894 c:\users\marina\utn\programacion-laboratorioclases\laboratorio-programacion\clase03\clase03\mibiblioteca.h
+

@@ -10,19 +10,15 @@ float obtenerNumero(char mensaje[]){
 }
 
 float promedio(float numerosSumados,float cantidadDeVeces){
-    float numTotal;
-    float cantidad;
     float resultado;
-    resultado = numTotal/cantidad;
+    resultado = numerosSumados/cantidadDeVeces;
     return resultado;
 
 }
 
 float suma(float numero1, float numero2){
-    float num1;
-    float num2;
     float result;
     fflush(stdin);
-    result = num1 + num2;
+    result = numero1 + numero2;
     return result;
 }

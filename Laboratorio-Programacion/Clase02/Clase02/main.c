@@ -14,7 +14,7 @@ int main()
     char men[]="Ingrese el numero";
     for(i=0;i<5;i++){
         numPrincipal=obtenerNumero(men);
-        sumaTotalNumeros=numPrincipal+sumaTotalNumeros;
+        sumaTotalNumeros=suma(numPrincipal,sumaTotalNumeros);
         if(flag==0){
             max=numPrincipal;
             min=numPrincipal;
@@ -28,7 +28,7 @@ int main()
         }
 
     }
-    prom=sumaTotalNumeros/5.0;
+    prom=promedio(sumaTotalNumeros,5.0);
     printf("\nEl promedio de los numeros ingresados es %f", prom);
     printf("\nEl numero maximo es %f, el numero minimo es %f",max,min);
     printf("\nsumaaaaaaaaaaaaaaaaaaaa %f",sumaTotalNumeros);
