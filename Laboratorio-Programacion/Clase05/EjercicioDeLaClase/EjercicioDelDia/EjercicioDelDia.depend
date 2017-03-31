@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1490917154 source:d:\marina\programacion-laboratorioclases\laboratorio-programacion\clase05\ejerciciodelaclase\ejerciciodeldia\mibiblioteca.c
+	<stdio.h>
+	<stdlib.h>
+
+1490918711 source:d:\marina\programacion-laboratorioclases\laboratorio-programacion\clase05\ejerciciodelaclase\ejerciciodeldia\main.c
+	<stdio.h>
+	<stdlib.h>
+	"miBiblioteca.h"
+
+1490918679 d:\marina\programacion-laboratorioclases\laboratorio-programacion\clase05\ejerciciodelaclase\ejerciciodeldia\mibiblioteca.h
+
