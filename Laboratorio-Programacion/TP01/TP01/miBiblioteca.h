@@ -18,3 +18,5 @@ int menu();
  float resta(float numero1, float numero2);
  float division(float numero1, float numero2);
  float multilicacion(float numero1, float numero2);
+ float factorial(float numero);
+ void validacionIngreso(int opcion)

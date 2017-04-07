@@ -139,8 +139,10 @@ void ordernar(int numero[], int cantidadArray,int array2[]){
 
 int menu()
 {
-    int opcion=0;
-    printf("1- Ingresar 1er operando (A=x)\n");
+    //El menu, tiene una validacion, ya que si lo declaro como un entero y por pantalla le ingresan un flotante, el programa se rompe.
+    //Habilito que por pantalla pueda tomar un flotante, lo parseo a entero y luego, esa validacion tendra otra que le dira que el valor ingresado es incorrecto.
+    float opcion=0.0;
+    printf("\n1- Ingresar 1er operando (A=x)\n");
     printf("2- Ingresar 2do operando (B=y)\n");
     printf("3- Calcular la suma (A+B)\n");
     printf("4- Calcular la resta (A-B)\n");
@@ -150,10 +152,17 @@ int menu()
     printf("8- Calcular todas las operacione\n");
     printf("9- Salir\n");
     printf("Ingrese su opcion: ");
-    scanf("%d", &opcion);
-    return opcion;
+    scanf("%f", &opcion);
+    int opcionfinal=(int)opcion;
+    return opcionfinal;
 }
 
+void validacionIngreso(int opcion){
+    while(opcion>9||opcion<0){
+            printf("Valor incorrecto!.\nSolo puede elegir las opciones entre 1 y 9.\nPor favor, vuelva a ingresar una opcion: \n");
+            opcion=menu();
+        }
+}
  float promedioUno(float numerosSumados,float cantidadDeVeces){
     float resultado;
     resultado = numerosSumados/cantidadDeVeces;
@@ -194,5 +203,11 @@ float multilicacion(float numero1, float numero2){
     return result;
 }
 
-
+float factorial(float numero){
+    float result=1.0;
+    for(;numero>0;numero--){
+        result = result*numero;
+    }
+    return result;
+}
 

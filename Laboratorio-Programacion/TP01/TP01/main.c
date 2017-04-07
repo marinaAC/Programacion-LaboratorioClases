@@ -15,6 +15,7 @@ int main()
     while(seguir=='s')
     {
         opcion=menu();
+        validacionIngreso(opcion);
         switch(opcion)
         {
             case 1:
@@ -40,8 +41,12 @@ int main()
                 printf("\nEl resultado de la operacion es: %.3f\n",resultado);
                 break;
             case 7:
-                //printf("\nEl resultado de la operacion es: %.3f\n",resultado);
-                  seguir = 'n';
+                if(numA!=0){
+                    resultado=factorial(numA);
+                }else{
+                    resultado=factorial(numB);
+                }
+                printf("\nEl resultado de la operacion es: %.3f\n",resultado);
                 break;
             case 8:
                 resultado= resultado+resta(numA,numB)+suma(numA,numB)+multilicacion(numA,numB)+division(numA,numB);
