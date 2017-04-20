@@ -1,0 +1,2 @@
+int obtenerDni();
+int menu();

@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1492646775 source:d:\marina\tp\clase07\mibiblioteca.c
+	<stdio.h>
+	<stdlib.h>
+
+1492650200 source:d:\marina\tp\clase07\main.c
+	<stdio.h>
+	<stdlib.h>
+	"miBiblioteca.h"
+
+1492646770 d:\marina\tp\clase07\mibiblioteca.h
+
