@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1492734717 source:/home/alumno/Documentos/marina/clase09/ejercicioClase/main.c
+	<stdio.h>
+	<stdlib.h>
+	"miBiblioteca.h"
+
+1492733872 /home/alumno/Documentos/marina/clase09/ejercicioClase/miBiblioteca.h
+
