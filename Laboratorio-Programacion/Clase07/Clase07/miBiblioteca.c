@@ -269,3 +269,32 @@ int esTel(char tel[]){
     }
     return 0;
 }
+
+int getInt(char mensaje[]){
+    int buffer;
+    printf(mensaje);
+    fflush(stdin);
+    scanf("%d",&buffer);
+    return buffer;
+}
+
+float getFloat(char mensaje[]){
+    float buffer;
+    printf(mensaje);
+    fflush(stdin);
+    scanf("%f",&buffer);
+    return buffer;
+}
+
+char getFloat(char mensaje[]){
+    char buffer;
+    printf(mensaje);
+    fflush(stdin);
+    scanf("%c",&buffer);
+    return buffer;
+}
+
+void getString(char mensaje[], char input[]){
+    printf(mensaje);
+    scanf("s",input);
+}

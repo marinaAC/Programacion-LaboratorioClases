@@ -31,3 +31,7 @@ int menu();
  int soloLetras(char palabra[]);
  int alfaNum(char palabra[]);
  int esTel(char tel[]);
+
+ char getFloat(char mensaje[]);
+ float getFloat(char mensaje[]);
+ int getInt(char mensaje[]);
