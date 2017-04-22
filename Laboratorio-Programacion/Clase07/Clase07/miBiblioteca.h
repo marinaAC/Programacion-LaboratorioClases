@@ -20,3 +20,14 @@ int menu();
  float multilicacion(float numero1, float numero2);
  float factorial(float numero);
  void validacionIngreso(int opcion);
+
+
+
+
+ //////////Nuevos tipos de validaciones
+
+
+ int esNumerico(char num[]);
+ int soloLetras(char palabra[]);
+ int alfaNum(char palabra[]);
+ int esTel(char tel[]);
