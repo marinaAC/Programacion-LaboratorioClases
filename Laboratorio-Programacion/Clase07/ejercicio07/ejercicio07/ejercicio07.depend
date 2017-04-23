@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1492961314 source:c:\users\edith\marina\programacion-laboratorioclases\laboratorio-programacion\clase07\ejercicio07\ejercicio07\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"miBiblioteca.h"
+
+1492961361 c:\users\edith\marina\programacion-laboratorioclases\laboratorio-programacion\clase07\ejercicio07\ejercicio07\mibiblioteca.h
+
+1492961411 source:c:\users\edith\marina\programacion-laboratorioclases\laboratorio-programacion\clase07\ejercicio07\ejercicio07\mibiblioteca.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
