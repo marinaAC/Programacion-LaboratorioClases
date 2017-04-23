@@ -37,13 +37,13 @@ int main()
     while(opcion!=6){
 
         printf("Elija la opcion con la que desea trabajar");
-        opcion = getInt("\n\n1 - ALTA\n2 - BAJA\n3 - MODIFICACION\n4 - LISTAR\n5 - ORDENAR\n6 - SALIR");
+        opcion = getInt("\n\n1 - ALTA\n2 - BAJA\n3 - MODIFICACION\n4 - LISTAR\n5 - ORDENAR\n6 - SALIR\n\nIngrese la opcion: ");
 
         switch(opcion){
         case 1:
 
             indiceLibre = buscarPrimeraPersona(persona,MAXPERSONAS,-1);
-            if(indiceLibre==-1){
+            if(indiceLibre == -1){
                 printf("\nNo hay mas lejajos disponibles\n");
                 break;
             }
@@ -63,7 +63,7 @@ int main()
             //convierte el string en int
             auxLeg = atoi(auxLegString);
 
-            if(buscarPrimeraPersona(persona,MAXPERSONAS,auxLeg)!=1){
+            if(buscarPrimeraPersona(persona,MAXPERSONAS,auxLeg)!=-1){
                 printf("\nEL LEGAJO INGRESADO YA EXISTE\n");
                 break;
             }
@@ -119,7 +119,7 @@ int main()
                 }
             }
             break;
-        case 5:/*
+        case 5:
             printf("\nORDENAR\n");
             //el continue no rompe la interaccion, salta a la siguiente
             for(i=0; i<MAXPERSONAS;i++){
@@ -130,23 +130,14 @@ int main()
                     if(persona[j].legajo==-1){
                         continue;
                     }
-                    if(strcmp(persona[i].apellido,persona[j].apellido)){
-                        strcpy(auxApe,persona[i].apellido);
-                        strcpy(persona[i].apellido,persona.[j].apellido);
-                        strcpy(apellidoCliente[j],auxApe);
-
-
-                        strcpy(auxNom,nombreCliente[i]);
-                        strcpy(nombreCliente[i],nombreCliente[j]);
-                        strcpy(nombreCliente[j],auxNom);
-
-                        auxLeg = legajosClientes[i];
-                        legajosClientes[i] = legajosClientes[j];
-                        legajosClientes[j] = auxLeg;
+                    if(strcmp(persona[i].apellido,persona[j].apellido)>0){
+                        auxCliente = persona[j];
+                        persona[j] = persona[i];
+                        persona[i] = auxCliente;
                     }
                 }
             }
-*/
+
 
             break;
         case 6:

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "miBiblioteca.h"
-#define MAXCLIENTES 100
+#define MAXCLIENTES 20
 
 int main()
 {
@@ -26,7 +26,7 @@ int main()
     while(opcion!=6){
 
         printf("Elija la opcion con la que desea trabajar");
-        opcion = getInt("\n\n1 - ALTA\n2 - BAJA\n3 - MODIFICACION\n4 - LISTAR\n5 - ORDENAR\n6 - SALIR");
+        opcion = getInt("\n\n1 - ALTA\n2 - BAJA\n3 - MODIFICACION\n4 - LISTAR\n5 - ORDENAR\n6 - SALIR\n\nIngrese la opcion: ");
 
         switch(opcion){
         case 1:
@@ -37,6 +37,8 @@ int main()
                 break;
             }
             printf("\nALTA\n");
+            printf("INDICCE LIBRE: %d", indiceLibre);
+            printf("LEGAJO: %d", legajosClientes[indiceLibre]);
             if(!getStringSoloLetras("\nIngrese el nombre del cliente: ", auxNom)){
                 printf("El nombre debe estar solo compuesto por letras");
                 break;
@@ -51,12 +53,12 @@ int main()
             }
             //convierte el string en int
             auxLeg = atoi(auxLegString);
-
-            if(buscarPrimero(legajosClientes,MAXCLIENTES,auxLeg)!=1){
+            printf("\nlegajo antes de pasar por aca %d\n",auxLeg);
+            if(buscarPrimero(legajosClientes,MAXCLIENTES,auxLeg)!=-1){
                 printf("\nEL LEGAJO INGRESADO YA EXISTE\n");
                 break;
             }
-
+            printf("\nlegajo x guardar %d\n",auxLeg);
             strcpy(nombreCliente[indiceLibre],auxNom);
             strcpy(apellidoCliente[indiceLibre],auxApe);
             legajosClientes[indiceLibre]=auxLeg;
@@ -83,7 +85,7 @@ int main()
             }
             indiceResultBusqueda = buscarPrimero(legajosClientes,MAXCLIENTES,atoi(auxLegString));
             if(indiceResultBusqueda==-1){
-                printf("\nNO SE ENCUENTRA EL LEGAJO");
+                printf("\nNO SE ENCUENTRA EL LEGAJO\n");
                 break;
             }
 
@@ -102,8 +104,8 @@ int main()
         case 4:
             printf("\nLISTAR\n");
             for(i=0;i<MAXCLIENTES;i++){
-                if(legajosClientes[i]!=-1){
-                    printf("\n %s, %s, %d", apellidoCliente[i], nombreCliente[i], legajosClientes[i]);
+                if(legajosClientes[i]!= -1){
+                    printf("\n %s, %s, %d\n", apellidoCliente[i], nombreCliente[i], legajosClientes[i]);
                 }
             }
             break;

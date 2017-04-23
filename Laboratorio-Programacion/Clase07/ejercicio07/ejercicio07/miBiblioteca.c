@@ -343,7 +343,7 @@ int getStringSoloNum(char mensaje[], char input[]){
     *param: recibe el array a inicializar, la cantidad de lugares que tiene, y el valor a guardar
     *return: no retorna nada
 */
-void inicializarArrayInt(char arrayAtrabajar[],int cantidadMaxima,int valor){
+void inicializarArrayInt(int arrayAtrabajar[],int cantidadMaxima,int valor){
     int i;
     for(i=0;i<cantidadMaxima;i++){
         arrayAtrabajar[i]=valor;

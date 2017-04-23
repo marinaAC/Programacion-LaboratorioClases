@@ -298,3 +298,5 @@ void getString(char mensaje[], char input[]){
     printf(mensaje);
     scanf("s",input);
 }
+
+

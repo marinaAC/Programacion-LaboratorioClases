@@ -12,3 +12,16 @@
 	<stdio.h>
 	<stdlib.h>
 
+1492981911 source:c:\users\marina\utn\programacion-laboratorioclases\laboratorio-programacion\clase07\ejercicio07\ejercicio07\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"miBiblioteca.h"
+
+1492979596 c:\users\marina\utn\programacion-laboratorioclases\laboratorio-programacion\clase07\ejercicio07\ejercicio07\mibiblioteca.h
+
+1492980680 source:c:\users\marina\utn\programacion-laboratorioclases\laboratorio-programacion\clase07\ejercicio07\ejercicio07\mibiblioteca.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
