@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1492961869 source:c:\users\edith\marina\programacion-laboratorioclases\laboratorio-programacion\clase08\ejercicio08\mibiblioteca.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
