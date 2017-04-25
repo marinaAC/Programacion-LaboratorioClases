@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1493095836 source:c:\users\marina\utn\programacion-laboratorioclases\laboratorio-programacion\tp_2\funciones.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1493095873 c:\users\marina\utn\programacion-laboratorioclases\laboratorio-programacion\tp_2\funciones.h
+
