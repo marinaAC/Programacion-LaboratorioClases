@@ -183,18 +183,22 @@ void inicializarArrayInt(int arrayDos[][3],int primerElemento,int segundoElement
 void graficar(int graf[][3],int cantidadElementos);
 
 /**
-  * Calcula el valor minimo de tres valores y retorna el menor
-  * @param recibe tres elementos
-  * @return retorna el valor mas chico.
+  * Ordena la matriz de mayor a menor. Re corre primero las columnas y las ordena por fila.
+  * @param recibe el array una matriz y la cantidad de elementos,
+  * @return no retorna nada, solo realiza el ordenamiento de la matriz enviada por parametro.
  */
-int indiceMinimo(int contadorPrimero,int contadorSegundo, int contadorTercero);
+void ordenarMayor(int graf[][3],int cantidadElementos);
 
 /**
-  * Calcula el valor maximo de tres valores y retorna el menor
-  * @param recibe tres elementos
-  * @return retorna el valor mas grande.
+  * Valida que la opcion ingresada pertenesca a los rangos 1 y 5
+  * @param recibe la opcion
+  * @return no retorna nada
  */
-int indiceMaximo(int contadorPrimero,int contadorSegundo, int contadorTercero);
+void validacionIngreso(int opcion);
 
-
-void graficarContadores(int contadorPrimero,int contadorSegundo, int contadorTercero);
+/**
+  * Menu en el cual se encuentra cargado lo que aparece por pantalla (esta funcion la mejorare en algun futuro)
+  * @param no recibe nada
+  * @return retorna el valor ingresado.
+ */
+int menu();

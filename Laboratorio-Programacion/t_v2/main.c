@@ -15,12 +15,8 @@ int main()
     char auxDniStr[8];
     int grafico[MAXPERSONAS][3];
     int auxEdad;
-    int auxEstado;
     int auxDni;
-
-    int contadorEdadMinima;
-    int contadorEdadMaxima;
-    int contadorIntermedio;
+    int contadorGenerico;
 
     int indicePrimero;
     int indicePrimerBusqueda;
@@ -32,14 +28,10 @@ int main()
     inicializarListaInt(lista,MAXPERSONAS,-1);
     while(seguir=='s')
     {
-        printf("\nSistema de ingreso: \n");
-        printf("1- Agregar persona\n");
-        printf("2- Borrar persona\n");
-        printf("3- Imprimir lista ordenada por  nombre\n");
-        printf("4- Imprimir grafico de edades\n\n");
-        printf("5- Salir\n");
 
-        scanf("%d",&opcion);
+
+        opcion=menu();
+        validacionIngreso(opcion);
 
         switch(opcion)
         {
@@ -110,12 +102,7 @@ int main()
                 break;
             case 4:
                 printf("\nGRAFICO\n");
-
-                int auxMaxima = 0;
-                int auxMinima = 0;
-                contadorEdadMaxima =0;
-                contadorEdadMinima = 0;
-                contadorIntermedio =0;
+                contadorGenerico = 0;
                 inicializarArrayInt(grafico,MAXPERSONAS,3,0);
                 for(i=0;i<MAXPERSONAS;i++){
                     if(lista[i].estado==-1){
@@ -123,31 +110,26 @@ int main()
                     }
                     if(lista[i].edad<19&&lista[i].edad>0){
                         grafico[i][0]=1;
-                        contadorEdadMinima++;
-                        printf("\n%d min:",grafico[i][0]);
+                        grafico[i][1]=0;
+                        grafico[i][2]=0;
                     }
                     if(lista[i].edad>35){
                         grafico[i][2]=1;
-                        contadorEdadMaxima++;
-                        printf("\n%d max:",grafico[i][2]);
-
+                        grafico[i][1]=0;
+                        grafico[i][0]=0;
                     }
                     if(lista[i].edad>18&&lista[i].edad<35){
                         grafico[i][1]=1;
-                        contadorIntermedio++;
-                        printf("\n%d inter:",grafico[i][1]);
+                        grafico[i][2]=0;
+                        grafico[i][0]=0;
                     }
+                    contadorGenerico++;
                 }
 
-                printf("\nmax: %d", contadorEdadMaxima);
-                printf("\nmin: %d", contadorEdadMinima);
-                printf("\ninter: %d", contadorIntermedio);
-                auxMaxima = indiceMaximo(contadorEdadMinima,contadorIntermedio,contadorEdadMaxima);
-                graficar(grafico,auxMaxima);
+                ordenarMayor(grafico,contadorGenerico);
+                graficar(grafico,contadorGenerico);
                 printf("\n\t<18 <18-35>");
-                  //  printf("\t<18-35>");
-                    printf("\t>35");
-
+                printf("\t>35");
                 break;
             case 5:
                 seguir = 'n';

@@ -198,6 +198,7 @@ int esTel(char tel[]){
     return 0;
 }
 
+
 int getInt(char mensaje[]){
     int buffer;
     printf(mensaje);
@@ -287,69 +288,59 @@ int buscarPorDni(EPersona lista[], int dni, int cantidadPersonas){
 
 void graficar(int graf[][3],int cantidadElementos){
     int i,j;
-    for(i=cantidadElementos;i>0;i--){
+    for(i=cantidadElementos;i>=0;i--){
         for(j=0;j<3;j++){
-            printf("%d",graf[j][i]);
+            if(graf[i][j]!=1 && graf[i][j]!=0){
+                continue;
+            }
             if(graf[i][j]==1){
                 printf("\t*");
             }else{
-                printf("  ");
+                printf("\t");
             }
         }
         printf("\n");
    }
 }
 
-/*
-void graficarContadores(int contadorPrimero,int contadorSegundo, int contadorTercero){
-    int si =1;
-    while(si==1){
-        if(contadorPrimero>0) {
-           contadorPrimero--;
-           printf("*");
-        }
-        if(contadorSegundo>0) {
-            contadorSegundo--;
-            printf(" *");
-            if(contadorTercero>0) {
-                contadorTercero--;
-                printf(" *");
-         }
-        }else if(contadorTercero>0){
-            contadorTercero--;
-                printf("   *");
-        }
+void ordenarMayor(int graf[][3],int cantidadElementos){
+    int x, y, m;
+    int aux;
 
-        printf("\n");
-        if(contadorPrimero == 0 && contadorSegundo == 0 && contadorTercero == 0){
-        break;
+        for(y=0;y<=2;y++){
+            for(x=0;x<cantidadElementos;x++){
+                    for(m=x+1;m<cantidadElementos;m++){
+                        if(graf[x][y]<graf[m][y]){
+                            aux = graf[m][y];
+                            graf[m][y] = graf[x][y];
+                            graf[x][y] = aux;
+                    }
+                }
+            }
         }
-    }
-}
-*/
-int indiceMinimo(int contadorPrimero,int contadorSegundo, int contadorTercero){
-    int auxMinimo;
-    if(contadorPrimero<contadorSegundo){
-        auxMinimo = contadorPrimero;
-    }else{
-        auxMinimo = contadorSegundo;
-    }
-    if(contadorTercero<auxMinimo){
-        auxMinimo = contadorTercero;
-    }
-    return auxMinimo;
 }
 
-int indiceMaximo(int contadorPrimero,int contadorSegundo, int contadorTercero){
-    int auxMaxima;
-     if(contadorPrimero>contadorSegundo){
-        auxMaxima = contadorPrimero;
-    }else{
-        auxMaxima = contadorSegundo;
-    }
-    if(auxMaxima<contadorTercero){
-        auxMaxima = contadorTercero;
-    }
-    return auxMaxima;
+int menu()
+{
+    //El menu, tiene una validacion, ya que si lo declaro como un entero y por pantalla le ingresan un flotante, el programa se rompe.
+    //Habilito que por pantalla pueda tomar un flotante, lo parseo a entero y luego, esa validacion tendra otra que le dira que el valor ingresado es incorrecto.
+    float opcion=0.0;
+    printf("\nSistema de ingreso: \n");
+    printf("1- Agregar persona\n");
+    printf("2- Borrar persona\n");
+    printf("3- Imprimir lista ordenada por  nombre\n");
+    printf("4- Imprimir grafico de edades\n\n");
+    printf("5- Salir\n");
+    printf("Ingrese su opcion: ");
+    scanf("%f", &opcion);
+    int opcionfinal=(int)opcion;
+    return opcionfinal;
+}
+
+void validacionIngreso(int opcion){
+    while(opcion>6||opcion<0){
+            printf("Valor incorrecto!.\nSolo puede elegir las opciones entre 1 y 5.\nPor favor, vuelva a ingresar una opcion: \n");
+            opcion=menu();
+        }
 }
 

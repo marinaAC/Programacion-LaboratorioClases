@@ -27,3 +27,17 @@
 	<string.h>
 	"funciones.h"
 
+1493315021 source:c:\users\b042408\m\programacion-laboratorioclases\laboratorio-programacion\t_v2\funciones.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1493314606 c:\users\b042408\m\programacion-laboratorioclases\laboratorio-programacion\t_v2\funciones.h
+
+1493314969 source:c:\users\b042408\m\programacion-laboratorioclases\laboratorio-programacion\t_v2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
