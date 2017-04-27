@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1493263403 source:c:\users\marina\utn\programacion-laboratorioclases\laboratorio-programacion\tp2\prueba\main.c
+	<stdio.h>
+	<stdlib.h>
+
