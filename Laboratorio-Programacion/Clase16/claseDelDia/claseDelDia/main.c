@@ -19,6 +19,22 @@ int main()
     arrayPersona[0].edad=10;
     arrayPersona[1].edad=50;
     arrayPersona[2].edad=30;
+    /**
+    ***formas de declarar malloc para reservar un espacio para un array de persona
+    */
+    EPersona* arrayDinamicaPersona;
+    arrayDinamicaPersona=(EPersona*)malloc(sizeof(EPersona)*50);
+    if(arrayDinamicaPersona!=NULL){
+        int i;
+        for(i=0;i<10;i++){
+            arrayDinamicaPersona[i].edad=0;
+        }
+    }
+    /**
+    ***Formas de declarar malloc para reservar un espacio para los punteros de tipo persona
+    */
+    EPersona** arrayDinamicoPuntero;
+    arrayDinamicoPuntero=(EPersona**)malloc(sizeof(EPersona*)*30);
     int i;
 /*
     for(i=0;i<10;i++){
@@ -52,6 +68,7 @@ int main()
     printf("Primera edad ordenada: %d\n",(*punteroArray[0]).edad);
     printf("Primera edad ordenada: %d\n",(*punteroArray[1]).edad);
     printf("Primera edad ordenada: %d\n",(*punteroArray[2]).edad);
+
 
     return 0;
 }
