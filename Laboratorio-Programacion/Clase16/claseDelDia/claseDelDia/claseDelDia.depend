@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1495146493 source:d:\marina\programacion-laboratorioclases\laboratorio-programacion\clase16\clasedeldia\clasedeldia\mibiblioteca.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"miBiblioteca.h"
+
+1495146515 d:\marina\programacion-laboratorioclases\laboratorio-programacion\clase16\clasedeldia\clasedeldia\mibiblioteca.h
+
+1495151201 source:d:\marina\programacion-laboratorioclases\laboratorio-programacion\clase16\clasedeldia\clasedeldia\main.c
+	<stdio.h>
+	<stdlib.h>
+
