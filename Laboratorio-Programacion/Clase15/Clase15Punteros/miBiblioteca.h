@@ -1,18 +1,29 @@
+#ifndef FUNCIONES_H_INCLUDED
+#define FUNCIONES_H_INCLUDED
 
 typedef struct {
 
     int id;
     char nombre[50];
-    char apellido[50];
-    int estado;
-    int idReclamo;
+    char passwords[50];
+    int isEmpty;
+    int calificacion;
+    int idPublicacion[10];
+    int cantidadPublicaciones;
 
-}EAbonado;
+}EUsuario;
 
-typedef struct{
+typedef struct {
+
     int id;
-    int estadoReclamo[2];
-}EReclamo;
+    char nombreProducto[50];
+    int precio;
+    int stock;
+    int idUsuario;
+    int cantidadVendida;
+    int isEmpty;
+
+}EPublicacion;
 
 /**
  * Inicializa el array con un valor determinado.
@@ -20,14 +31,14 @@ typedef struct{
  * @param con el que se desea guardar.
  * @return no retorna nada.
  */
-void inicializarListaInt(EAbonado lista[],int cantidadPersonas,int valor);
+void inicializarListaInt(EUsuario lista[],int cantidadPersonas,int valor);
 
 /**
  * Obtiene el primer indice libre del array.
  * @param lista el array se pasa como parametro.
  * @return el primer indice disponible
  */
-int obtenerEspacioLibre(EAbonado lista[], int cantidadPersonas, int valor);
+int obtenerEspacioLibre(EUsuario lista[], int cantidadPersonas, int valor);
 
 /**
  * Obtiene el indice que coincide con el dni pasado por parametro.
@@ -35,7 +46,7 @@ int obtenerEspacioLibre(EAbonado lista[], int cantidadPersonas, int valor);
  * @param dni el dni a ser buscado en el array.
  * @return el indice en donde se encuentra el elemento que coincide con el parametro dni
  */
-int buscarPorDni(EAbonado lista[], int dni, int cantidadPersonas);
+int buscarPorDni(EUsuario lista[], int dni, int cantidadPersonas);
 
 #endif // FUNCIONES_H_INCLUDED
 
@@ -206,3 +217,59 @@ void validacionIngreso(int opcion);
  */
 int menu();
 
+/**
+  * Inicializa la lista de usuarios para saber que lugar esta disponible
+  * @param recibe el puntero de donde se encuentra la lista y el tamaño
+  * @return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+ */
+int initUsuario(EUsuario* pUsuario, int length);
+
+/**
+  * Agrega el usuario en un lugar vacio de la lista
+  * @param recibe el puntero de donde se encuentra la lista, el tamaño de la lista, el id, el nombre y la pasword a guardar
+  * @return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+ */
+int addUsuario(EUsuario* pUsuario, int length, int id, char name[],char pass[]);
+
+/**
+  * Encuentra un usuario por id
+  * @param recibe el puntero de donde se encuentra la lista, el tamaño de la lista, el id
+  * @return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+ */
+EUsuario* findUsuarioById(EUsuario* pUsuario, int length,int id);
+
+/**
+  * Borra de forma logica el usuario, ponieno en valor 1 si se encuentra vacio, otra vez
+  * @param recibe el puntero de donde se encuentra la lista, el tamaño de la lista y el id
+  * @return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+ */
+int removeEmployee(EUsuario* pUsuario, int length, int id);
+
+/**
+  * Agrega una publicacion a la lista
+  * @param recibe el puntero donde se enceutnra la lista, el tamaño, id, el nombre, el precio, el stock y el id del usuario que lo ingreso
+  * @return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+ */
+int addPublicacion(EPublicacion* pPublicacion, int length, int id, char name[],int precio, int stock, int idUsuario);
+
+
+/**
+  * Encuentra una publicacion por id
+  * @param recibe el puntero de donde se encuentra la lista, el tamaño de la lista, el id
+  * @return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+ */
+EPublicacion* findPublicacionById(EPublicacion* pPublicacion, int length,int id);
+
+/**
+  * Inicializa la lista de publicaciones para saber que lugar esta disponible
+  * @param recibe el puntero de donde se encuentra la lista y el tamaño
+  * @return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+ */
+int initPub(EPublicacion* pPublicacion, int length);
+
+/**
+  * Borra de forma logica la publicacion, ponieno en valor 1 si se encuentra vacio, otra vez
+  * @param recibe el puntero de donde se encuentra la lista, el tamaño de la lista y el id
+  * @return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+ */
+int removePublicacion(EPublicacion* pUsuario, int length, int id);
