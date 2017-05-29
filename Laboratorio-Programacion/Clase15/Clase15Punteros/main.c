@@ -13,17 +13,6 @@
   *  * 4da funcion: Recibe el array como puntero y accede a los datos utilizando aritmetica de punteros
 ******************************************************************************************************************/
 
-
-int main()
-{
-
-    return 0;
-}
-
-
-/**
-    Impresion con relacion vectorial
-*/
 void printArray1(int arrayP[], int length){
     int i;
     for(i=0;i<length;i++){
@@ -42,22 +31,10 @@ void printArray2(int arrayP[], int length){
     }
     printf("\r\n");
 }
+int main()
+{
 
-void printArray3(int* arrayP, int length){
-    int i;
-    for(i=0;i<length;i++){
-        printf("%d",arrayP[i]);
-    }
-    printf("\r\n");
+    return 0;
 }
-/**
-    Accedemos a la impresion con aritmetica de punteros
 
-*/
-void printArray4(int* arrayP, int length){
-    int i;
-    for(i=0;i<length;i++){
-        printf("%d",*(arrayP+i);
-    }
-    printf("\r\n");
-}
+
