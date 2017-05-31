@@ -7,3 +7,9 @@
 
 1496033426 c:\users\marina\utn\tp_laboratorio1\programacion-laboratorioclases\laboratorio-programacion\clase18\ejercicio18\clase18\mibiblioteca.h
 
+1496033440 source:c:\users\marina\utn\tp_laboratorio1\programacion-laboratorioclases\laboratorio-programacion\clase18\ejercicio18\clase18\mibiblioteca.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"miBiblioteca.h"
+

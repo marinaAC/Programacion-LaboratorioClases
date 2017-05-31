@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1496184106 source:c:\users\marina\utn\tp_laboratorio1\programacion-laboratorioclases\laboratorio-programacion\clase19\ejercicio19\ejercicio19\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"miBiblioteca.h"
+
+1496183782 c:\users\marina\utn\tp_laboratorio1\programacion-laboratorioclases\laboratorio-programacion\clase19\ejercicio19\ejercicio19\mibiblioteca.h
+
+1496184176 source:c:\users\marina\utn\tp_laboratorio1\programacion-laboratorioclases\laboratorio-programacion\clase19\ejercicio19\ejercicio19\mibiblioteca.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"miBiblioteca.h"
+
