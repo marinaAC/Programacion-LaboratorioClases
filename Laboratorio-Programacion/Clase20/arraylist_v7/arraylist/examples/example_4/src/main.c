@@ -52,7 +52,7 @@ int main(void)
         startTesting(4);
         startTesting(5);
         startTesting(6);
-     /*   startTesting(7);
+        startTesting(7);
         startTesting(8);
         startTesting(9);
         startTesting(10);
@@ -61,7 +61,7 @@ int main(void)
         startTesting(13);
         startTesting(14);
         startTesting(15);
-        startTesting(16);
+     /*   startTesting(16);
         startTesting(17);*/
     #else
         //run();
