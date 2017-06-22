@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1498168991 source:d:\marina\examen2\parcial2\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1498169036 d:\marina\examen2\parcial2\arraylist.h
+
+1498173212 source:d:\marina\examen2\parcial2\destinatario.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1498173281 source:d:\marina\examen2\parcial2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"miBiblioteca.h"
+
+1498173323 d:\marina\examen2\parcial2\mibiblioteca.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1498173504 source:d:\marina\examen2\parcial2\mibiblioteca.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"miBiblioteca.h"
+	"ArrayList.h"
+
