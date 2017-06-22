@@ -262,8 +262,8 @@ S_Pers* readPerson(char* surname){
 */
 void cargarPelicula(EMovie* movie){
     printf("Agregar Pelicula\n");
-    char* auxDuracion;
-    char* auxPuntaje;
+    char auxDuracion[50];
+    char auxPuntaje[50];
     if(!getStringSoloLetras("\nIngrese el titulo de la pelicula: ",movie->titulo)){
         printf("Error!! solo puede ingresar letras!!");
         return;
@@ -287,6 +287,7 @@ void cargarPelicula(EMovie* movie){
     getString("\nPegue el link de la imagen: ",movie->linkImagen);
     movie->duracion = atoi(auxDuracion);
     movie->puntaje = atoi(auxPuntaje);
+    movie->isEmpty = 1;
 }
 
 int agregarPelicula(EMovie* movie){
@@ -296,8 +297,158 @@ int agregarPelicula(EMovie* movie){
         printf("Error!!! no se pudo abrir el archivo");
         return 0;
     }
+
     fwrite(movie,sizeof(EMovie),1,fp);
+
     fclose(fp);
     return 1;
 }
 
+int borrarPelicula(EMovie* movie){
+    FILE* fp;
+    EMovie* auxMovie;
+    int contadorLineas = 0;
+    fp= fopen("bin.data","rb");
+    if(fp==NULL){
+        printf("Error!! no se pudo abrir el archivo");
+        return -1;
+    }
+    printf("\nIngrese el titulo de la pelicula que desa borrar: ");
+    scanf("%s",auxMovie->titulo);
+    contadorLineas = obtenerLinea(movie,auxMovie,fp,contadorLineas);
+    fclose(fp);
+    return contadorLineas;
+}
+
+int obtenerLinea(EMovie* movie, EMovie* tituloBuscado, FILE* peli, int contador){
+
+    while(!feof(peli)){
+        fread(movie,sizeof(EMovie),1,peli);
+        if(strcmp(tituloBuscado->titulo,movie->titulo)==0){
+            movie->isEmpty = 0;
+            break;
+        }
+        contador++;
+    }
+    return contador;
+}
+
+int modificarPelicula(EMovie* movie){
+    FILE* fp;
+    fp = fopen("bin.data","rwb");
+    EMovie* auxiliarPeli=(EMovie*)malloc(sizeof(EMovie));
+    if(auxiliarPeli== NULL){
+        printf("ERROR");
+        return -1;
+    }
+    if(fp == NULL){
+        printf("Error!!! no se pudo leer el archivo");
+        return -1;
+    }
+    printf("\nIngrese el titulo de la pelicula: ");
+    fflush(stdin);
+    scanf("%s",auxiliarPeli->titulo);
+    while(!feof(fp)){
+        fread(movie,sizeof(EMovie),1,fp);
+        if(strcmp(auxiliarPeli->titulo,movie->titulo)==0){
+            cargarPelicula(movie);
+            break;
+        }
+    }
+    fclose(fp);
+
+}
+/*
+int generarLista(EMovie lista[]){
+    FILE* fp;
+    fp = fopen("bin.data","rb");
+    EMovie* movie;
+    int i = 0;
+    if(fp== NULL){
+        printf("Error!! el archivo no pudo ser lido");
+        return -1;
+    }
+    while(!feof(fp)){
+        fread(movie,sizeof(EMovie),1,fp);
+        strcpy(lista[i]->titulo,movie->titulo);
+        strcpy(lista[i]->descripcion,movie->descripcion);
+        strcpy(lista[i]->genero,movie->genero);
+        strcpy(lista[i]->linkImagen,movie->linkImagen);
+        lista[i]->duracion = movie->duracion;
+        lista[i]->puntaje = movie->puntaje;
+        lista[i]->isEmpty = movie->isEmpty;
+        i++;
+    }
+    fclose(fp);
+    return i;
+}
+/*
+
+int generarPagina(EMovie lista[], char nombre[], int len){
+    FILE* fhtml;
+    fhtml=fopen("index.html","a+");
+    int i;
+    if(fhtml==NULL){
+        printf("Error al generar el archivo html");
+        return -1;
+    }
+    fputs("<!DOCTYPE html>",fhtml);
+    fputs("<html>",fhtml);
+    fputs("<head>",fhtml);
+    fputs("<meta charset='utf-8'>",fhtml);
+    fputs("<meta http-equiv='X-UA-Compatible' content='IE=edge'>",fhtml);
+    fputs("<meta name='viewport' content='width=device-width, initial-scale=1'>",fhtml);
+    fputs("<title>Lista peliculas</title>",fhtml);
+    fputs("<link href='css/bootstrap.min.css' rel='stylesheet'>",fhtml);
+    fputs("<link href='css/custom.css' rel='stylesheet'>",fhtml);
+    fputs("<script src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js'></script>",fhtml);
+    fputs("<script src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js'></script>",fhtml);
+    fputs("</head>",fhtml);
+    fputs("<body>",fhtml);
+    fputs("<div class='container'>",fhtml);
+    fputs("<div class='row'>",fhtml);
+    for(i=0;i<len;i++){
+        fputs("<article class='col-md-4 article-intro'>",fhtml);
+        fputs("<a href='#'>",fhtml);
+        fputs("<a href='#'>",fhtml);
+    }
+
+
+
+
+
+
+
+
+                    <img class='img-responsive img-rounded' src='http://ia.media-imdb.com/images/M/MV5BMjA5NTYzMDMyM15BMl5BanBnXkFtZTgwNjU3NDU2MTE@._V1_UX182_CR0,0,182,268_AL_.jpg' alt=''>
+                </a>
+                <h3>
+                    <a href='#'>Back to the future</a>
+                </h3>
+				<ul>
+					<li>Género:Aventura</li>
+					<li>Puntaje:86</li>
+					<li>Duración:116</li>
+				</ul>
+                <p>A young man is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his friend, Dr. Emmett Brown, and must make sure his high-school-age parents unite in order to save his own existence.</p>
+            </article>
+			<!-- Repetir esto para cada pelicula -->
+
+
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+    <!-- jQuery -->
+    <script src='js/jquery-1.11.3.min.js'></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src='js/bootstrap.min.js'></script>
+	<!-- IE10 viewport bug workaround -->
+	<script src='js/ie10-viewport-bug-workaround.js'></script>
+	<!-- Placeholder Images -->
+	<script src='js/holder.min.js'></script>
+</body>
+</html>
+
+}
+*/

@@ -154,6 +154,7 @@ int al_contains(ArrayList* this, void* pElement)
         for(i=0;i<this->size;i++){
             if(this->pElements[i]==pElement){
                 returnAux = 1;
+                break;
             }
         }
     }
@@ -214,7 +215,7 @@ int al_clear(ArrayList* this)
     int returnAux = -1;
     if(this!=NULL){
         this->size = 0;
-     //   minArrayList(this);
+        //contract(this,this->size);
         returnAux = 0;
     }
     return returnAux;
@@ -343,9 +344,25 @@ void* al_pop(ArrayList* this,int index)
  */
 ArrayList* al_subList(ArrayList* this,int from,int to)
 {
-    void* returnAux = NULL;
-    if(this!= NULL && to>=0 && to<=this->size && from>=0 && from<=this->size){
+    ArrayList* returnAux = NULL;
+    ArrayList* newArrayList;
+    void* pElement;
+    int flag = 0;
+    if(this!= NULL && to>=0 && to<=this->size && from>=0 && from<=this->size && from<to){
+        newArrayList = al_newArrayList();
+        if(newArrayList !=  NULL){
+            for(;from<to;from++){
+                pElement = al_get(this,from);
+                if(al_add(newArrayList,pElement) !=0){
+                        flag= 1;
+                        break;
+                }
+            }
+            if(flag==0){
+                returnAux = newArrayList;
+            }
 
+        }
     }
     return returnAux ;
 }
@@ -360,9 +377,32 @@ ArrayList* al_subList(ArrayList* this,int from,int to)
  * \return int Return (-1) if Error [pList or pList2 are NULL pointer]
  *                  - (0) if Not contains All - (1) if is contains All
  */
-int al_containsAll(ArrayList* pList,ArrayList* pList2)
+int al_containsAll(ArrayList* this,ArrayList* secondList)
 {
     int returnAux = -1;
+    void* pElement;
+    if(this != NULL && secondList != NULL){
+        int i;
+        int findElement = 0;
+        int notContains =0;
+        int sizeSecondList = al_len(secondList);
+        for(i=0; i < sizeSecondList; i++){
+            pElement = al_get(secondList,i);
+            if(al_contains(this,pElement)==1){
+                  findElement++;
+            }else if(al_contains(this,pElement)==0){
+                notContains++;
+            }
+
+            if(findElement == sizeSecondList){
+                returnAux = 1;
+            }
+            if(notContains>0){
+                returnAux = 0;
+            }
+
+        }
+    }
 
     return returnAux;
 }
@@ -374,10 +414,36 @@ int al_containsAll(ArrayList* pList,ArrayList* pList2)
  * \return int Return (-1) if Error [pList or pFunc are NULL pointer]
  *                  - (0) if ok
  */
-int al_sort(ArrayList* pList, int (*pFunc)(void* ,void*), int order)
+int al_sort(ArrayList* this, int (*pFunc)(void* ,void*), int order)
 {
     int returnAux = -1;
-
+    int i;
+    void* aux;
+    int flag = 0;
+    if(this != NULL, pFunc != NULL){
+        int sizeList = al_len(this)-1;
+        while(flag==0){
+            flag=1;
+            returnAux =0;
+            if(order == 1){
+                    for(i=0;i<sizeList;i++){
+                        aux = this->pElements[i];
+                        this->pElements[i]=this->pElements[i+1];
+                        this->pElements[i+1]=aux;
+                        flag=0;
+                    }
+            }else if(order == 0){
+                    for(i=0;i<sizeList;i++){
+                        aux=this->pElements[i+1];
+                        this->pElements[i+1]=this->pElements[i];
+                        this->pElements[i]=aux;
+                        flag=0;
+                    }
+               }else{
+                    returnAux = -1;
+               }
+            }
+        }
     return returnAux;
 }
 
@@ -387,10 +453,17 @@ int al_sort(ArrayList* pList, int (*pFunc)(void* ,void*), int order)
  * \return int Return (-1) if Error [pList is NULL pointer or if can't allocate memory]
  *                  - (0) if ok
  */
-int resizeUp(ArrayList* pList)
+int resizeUp(ArrayList* this)
 {
     int returnAux = -1;
-
+    if(this != NULL){
+        void* aux = realloc(this->pElements,sizeof(void*)*(this->reservedSize+AL_INCREMENT));
+        if(aux != NULL){
+            this->pElements = aux;
+            this->reservedSize = this->reservedSize + AL_INCREMENT;
+            returnAux = 0;
+        }
+    }
     return returnAux;
 
 }
@@ -401,10 +474,18 @@ int resizeUp(ArrayList* pList)
  * \return int Return (-1) if Error [pList is NULL pointer or invalid index]
  *                  - ( 0) if Ok
  */
-int expand(ArrayList* pList,int index)
+int expand(ArrayList* this,int index)
 {
     int returnAux = -1;
-
+    if(this != NULL && index >= 0 && index < this->size){
+        if(this->size < this->reservedSize || resizeUp(this) == 0){
+            this->size++;
+            int i;
+            for(i = (this->size)-1; i > index; i--)
+                this->pElements[i] = this->pElements[i-1];
+            returnAux = 0;
+        }
+    }
     return returnAux;
 }
 
@@ -417,25 +498,13 @@ int expand(ArrayList* pList,int index)
 int contract(ArrayList* this,int index)
 {
     int returnAux = -1;
-   /* if(this != NULL && index>=0 && index<=this->size){
-        ArrayList* aux;
-        aux =realloc(aux,AL_INITIAL_VALUE);
-        if(aux!=NULL){
-          this->pElements = aux;
-          this->reservedSize = AL_INITIAL_VALUE;
+       while(index < (this->size)-1){
+            this->pElements[index] = this->pElements[index+1];
+            index++;
         }
-        returnAux = 0;
-    }*/
+
+        (this->size)--;
     return returnAux;
 }
 
-
-void minArrayList(ArrayList* this){
-    ArrayList* aux;
-    aux =realloc(aux,AL_INITIAL_VALUE);
-        if(aux!=NULL){
-          this->pElements = aux;
-          this->reservedSize = AL_INITIAL_VALUE;
-    }
-}
 
