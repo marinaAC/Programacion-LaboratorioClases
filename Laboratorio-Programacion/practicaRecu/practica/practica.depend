@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1499282924 source:c:\users\b042408\practica\practica\base.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"destinatario.h"
+	"ArrayList.h"
+
+1499272762 source:c:\users\b042408\practica\practica\controler.c
+
+1499272710 source:c:\users\b042408\practica\practica\listanegra.c
+
+1499273554 source:c:\users\b042408\practica\practica\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1499272729 source:c:\users\b042408\practica\practica\validaciones.c
+
+1499276002 source:c:\users\b042408\practica\practica\destinatario.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1499282644 source:c:\users\b042408\practica\practica\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1499276756 c:\users\b042408\practica\practica\arraylist.h
+
+1499274850 c:\users\b042408\practica\practica\destinatario.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
