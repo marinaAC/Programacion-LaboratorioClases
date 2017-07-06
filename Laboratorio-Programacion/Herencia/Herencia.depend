@@ -1,0 +1,50 @@
+# depslib dependency file v1.0
+1499302200 source:/home/alumno/m/Herencia/administrativo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Object.h"
+	"administrativo.h"
+
+1499302129 /home/alumno/m/Herencia/administrativo.h
+
+1499298665 /home/alumno/m/Herencia/Object.h
+
+1499298580 source:/home/alumno/m/Herencia/ArrayList.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1499298608 /home/alumno/m/Herencia/ArrayList.h
+
+1499304443 source:/home/alumno/m/Herencia/base.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Object.h"
+	"programador.h"
+	"administrativo.h"
+	"ArrayList.h"
+
+1499302086 /home/alumno/m/Herencia/programador.h
+
+1499304486 source:/home/alumno/m/Herencia/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Object.h"
+	"programador.h"
+	"administrativo.h"
+	"ArrayList.h"
+	"base.h"
+
+1499302714 source:/home/alumno/m/Herencia/programador.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Object.h"
+	"programador.h"
+
+1499303918 /home/alumno/m/Herencia/base.h
+
