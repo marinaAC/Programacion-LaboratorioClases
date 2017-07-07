@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1499384649 source:d:\marina\programacion-laboratorioclases\laboratorio-programacion\recuperatorio\recuperatoriolabo\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1499379520 d:\marina\programacion-laboratorioclases\laboratorio-programacion\recuperatorio\recuperatoriolabo\arraylist.h
+
+1499383999 source:d:\marina\programacion-laboratorioclases\laboratorio-programacion\recuperatorio\recuperatoriolabo\base.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Productos.h"
+	"ArrayList.h"
+	"base.h"
+
+1499385593 d:\marina\programacion-laboratorioclases\laboratorio-programacion\recuperatorio\recuperatoriolabo\productos.h
+
+1499384792 source:d:\marina\programacion-laboratorioclases\laboratorio-programacion\recuperatorio\recuperatoriolabo\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"base.h"
+	"Productos.h"
+
+1499382177 source:d:\marina\programacion-laboratorioclases\laboratorio-programacion\recuperatorio\recuperatoriolabo\productos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Productos.h"
+
+1499381203 source:d:\marina\programacion-laboratorioclases\laboratorio-programacion\recuperatorio\recuperatoriolabo\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
+1499385792 d:\marina\programacion-laboratorioclases\laboratorio-programacion\recuperatorio\recuperatoriolabo\validaciones.h
+
+1499385255 d:\marina\programacion-laboratorioclases\laboratorio-programacion\recuperatorio\recuperatoriolabo\base.h
+
