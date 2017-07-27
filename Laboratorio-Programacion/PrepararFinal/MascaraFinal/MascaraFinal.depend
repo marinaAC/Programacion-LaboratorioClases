@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1501168430 source:c:\users\administrador\documents\utn\programacion-laboratorioclases\laboratorio-programacion\prepararfinal\mascarafinal\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1501168491 c:\users\administrador\documents\utn\programacion-laboratorioclases\laboratorio-programacion\prepararfinal\mascarafinal\arraylist.h
+

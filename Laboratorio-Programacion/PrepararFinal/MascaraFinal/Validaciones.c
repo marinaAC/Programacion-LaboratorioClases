@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "validaciones.h"
+#include "Validaciones.h"
 
 
-/////////Validaciones de la forma de entrada
+
 int esNumerico(char* num){
 	int returnAux = 1;
     int i=0;
@@ -78,8 +78,6 @@ int esMail(char* email){
     return returnAux;
 
 }
-
-
 
 int getInt(char* mensaje){
     int buffer;
