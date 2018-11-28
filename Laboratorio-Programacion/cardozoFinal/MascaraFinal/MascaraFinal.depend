@@ -1,0 +1,78 @@
+# depslib dependency file v1.0
+1501168430 source:c:\users\administrador\documents\utn\programacion-laboratorioclases\laboratorio-programacion\prepararfinal\mascarafinal\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1501168491 c:\users\administrador\documents\utn\programacion-laboratorioclases\laboratorio-programacion\prepararfinal\mascarafinal\arraylist.h
+
+1501191921 source:d:\cardozofinal\mascarafinal\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1501191921 d:\cardozofinal\mascarafinal\arraylist.h
+
+1501202529 source:d:\cardozofinal\mascarafinal\base.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Notas.h"
+	"frecuencia.h"
+	"Base.h"
+	"Interface.h"
+
+1501191921 d:\cardozofinal\mascarafinal\interface.h
+
+1501198879 d:\cardozofinal\mascarafinal\notas.h
+
+1501197928 d:\cardozofinal\mascarafinal\frecuencia.h
+
+1501195288 source:d:\cardozofinal\mascarafinal\frecuencia.c
+	<stdio.h>
+	<stdlib.h>
+	"frecuencia.h"
+
+1501195380 source:d:\cardozofinal\mascarafinal\interface.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Interface.h"
+	"Validaciones.h"
+
+1501191921 d:\cardozofinal\mascarafinal\validaciones.h
+
+1501201179 source:d:\cardozofinal\mascarafinal\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Notas.h"
+	"frecuencia.h"
+	"Base.h"
+	"Interface.h"
+
+1501191921 source:d:\cardozofinal\mascarafinal\people.c
+	<stdio.h>
+	<stdlib.h>
+	"People.h"
+	"Validaciones.h"
+
+1501191921 d:\cardozofinal\mascarafinal\people.h
+
+1501191921 source:d:\cardozofinal\mascarafinal\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1501202555 source:d:\cardozofinal\mascarafinal\notas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Notas.h"
+
+1501202668 d:\cardozofinal\mascarafinal\base.h
+
