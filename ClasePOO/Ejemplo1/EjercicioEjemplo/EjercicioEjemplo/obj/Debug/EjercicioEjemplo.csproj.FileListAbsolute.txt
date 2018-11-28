@@ -1,0 +1,6 @@
+C:\Users\Administrador\Documents\UTN\Programacion I - Clase\EjercicioResuelto\Ejemplo1\EjercicioEjemplo\EjercicioEjemplo\bin\Debug\EjercicioEjemplo.exe.config
+C:\Users\Administrador\Documents\UTN\Programacion I - Clase\EjercicioResuelto\Ejemplo1\EjercicioEjemplo\EjercicioEjemplo\bin\Debug\EjercicioEjemplo.exe
+C:\Users\Administrador\Documents\UTN\Programacion I - Clase\EjercicioResuelto\Ejemplo1\EjercicioEjemplo\EjercicioEjemplo\bin\Debug\EjercicioEjemplo.pdb
+C:\Users\Administrador\Documents\UTN\Programacion I - Clase\EjercicioResuelto\Ejemplo1\EjercicioEjemplo\EjercicioEjemplo\obj\Debug\EjercicioEjemplo.csprojResolveAssemblyReference.cache
+C:\Users\Administrador\Documents\UTN\Programacion I - Clase\EjercicioResuelto\Ejemplo1\EjercicioEjemplo\EjercicioEjemplo\obj\Debug\EjercicioEjemplo.exe
+C:\Users\Administrador\Documents\UTN\Programacion I - Clase\EjercicioResuelto\Ejemplo1\EjercicioEjemplo\EjercicioEjemplo\obj\Debug\EjercicioEjemplo.pdb
